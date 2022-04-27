@@ -1,17 +1,22 @@
 ---
-title: FP - Curry, 不是吃的也不會射三分
+title: Curry - 不是吃的也不會射三分
+tags: 
+ - Functional Programming
 description: 柯里化 (Currying) 是指，將接受 n 個參數的 function 轉變成 n 個只接受一個參數的 function 的過程。
 date: 2022-03-12
 scheduled: 2022-03-12
-tags: Functional Programming
 image: https://i.imgur.com/8aoyqbg.png
 imageAlt: 'curry image'
 layout: layouts/post.njk
 ---
-![an image](https://i.imgur.com/8aoyqbg.png)
+
+## Curry - 不是吃的也不會射三分
+
+![curry](https://i.imgur.com/8aoyqbg.png)
+
 柯里化 (Currying) 是指，將接受 n 個參數的 function 轉變成 n 個只接受一個參數的 function 的過程。
 
-```js/2/4
+```javascript=
 const plus = (a,b) =>{
     return a + b
 }
@@ -26,7 +31,7 @@ const plus = (a) =>{
 
 我們可以運用[閉包（closuer）](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Closures)的特性傳入第一個固定參數，讓 currying 的 function `plus` 記住，之後就可以重複運用:
 
-```js/2/4
+```javascript=
 const plusTEN = plus(10)
 
 let a = plusTEN(plusTEN(1)) //21
@@ -34,7 +39,7 @@ let a = plusTEN(plusTEN(1)) //21
 
 同時，為了能更快的使用 curry，我們可以透過 loadsh 來達成
 
-```js/2/4
+```javascript=
 import _ from 'loadsh'
 
 const plusCurry = _.curry(function(a,b){
@@ -50,20 +55,20 @@ let b = plusCurry(2)(3) //5
 let c = plusCurry(2,3)  //5
 ```
 
-### what for
+## what for
 
 當然，知道了這個酷酷的新東西後，一定要知道他實際上可以怎麼運用，以下就來舉個案例：
 
 我們需要能夠從一大堆資料當中，快速找到特定幾個我們想要的資料
 
-```js/2/4
+```javascript=
 // data
 const messData = ['12','1 2','1-2','3 4']
 ```
 
 首先，搞清楚目的，我們要從 array 中，找到符合的特定字串（假設是 `' '` 和 `'-'` ），因此我們就可以創造以下兩個 curry function:
 
-```js/2/4
+```javascript=
 
 const matchStr = (target)=>{
     return function(text){
@@ -89,7 +94,7 @@ const filter = _.curry(function(func,arr){
 
 接著，假設我們要從這一堆東西中，找到含有 `' '` 和 `'-'` 的字串，就可以快速透過我們剛剛定義好的 curry function 達成:
 
-```js/2/4
+```javascript=
 const matchSpace = matchStr(/\s+/g)
 const matchDash = matchStr(/\-/g)
 
@@ -100,7 +105,7 @@ let hasSpace = findSpace(messData) // ['1 2','3 4']
 let hasDash = findDash(messData) //['1-2']
 ```
 
-### 總結
+## 總結
 
 從以上的實作中，我們可以知道 curry 其實就是一個創造樣板程式碼的方法。
 

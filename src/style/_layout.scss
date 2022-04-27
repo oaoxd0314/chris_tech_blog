@@ -1,0 +1,21 @@
+.b{
+    display: block;
+}
+
+.g{
+    display: grid;
+}
+
+.f{
+    display: flex;
+}
+
+.flex-row{
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-col{
+    display: flex;
+    flex-direction: column;
+}
