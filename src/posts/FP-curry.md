@@ -1,7 +1,7 @@
 ---
 title: Curry - 不是吃的也不會射三分
 tags: 
- - Functional Programming
+ - "Functional Programming"
 description: 柯里化 (Currying) 是指，將接受 n 個參數的 function 轉變成 n 個只接受一個參數的 function 的過程。
 date: 2022-03-12
 scheduled: 2022-03-12
@@ -9,7 +9,6 @@ image: https://i.imgur.com/8aoyqbg.png
 imageAlt: 'curry image'
 layout: layouts/post.njk
 ---
-
 ## Curry - 不是吃的也不會射三分
 
 ![curry](https://i.imgur.com/8aoyqbg.png)

@@ -1,12 +1,25 @@
 const nowDate = new Date()
-const {toUTCTimeStamp} = require("./helper/formater")
+const {toUTCTimeStamp} = require("./helper/formater.js")
 const { DateTime } = require("luxon")
 
 module.exports = function(eleventyConfig){
     eleventyConfig.addPassthroughCopy("./src/assets")
     eleventyConfig.addPassthroughCopy("./src/admin")
 
+    //collection
+    eleventyConfig.addCollection("tagList", require("./src/_11ty/getTagList"));
+
     // filter 
+    eleventyConfig.addFilter("htmlDateString", (dateObj) => {
+        return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("yyyy-LL-dd");
+    });
+
+    eleventyConfig.addFilter("readableDate", (dateObj) => {
+        return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat(
+          "dd LLL yyyy"
+        );
+    });
+
     eleventyConfig.addFilter("randomPost",(arr)=>{
         console.log(arr)
         arr.sort(()=>{
