@@ -51,7 +51,7 @@ side effect 可以理解成 **在運算的過程中，改變了狀態或是對�
 
 例如，你想從 array 取出某一段，與其用 `splice` 不如用 `slice`：
 
-```javascript=
+```jsx
 let data = [5,1,2,3,4]
 
 console.log(data.slice(2,3)) // 2
@@ -65,7 +65,7 @@ console.log(data) // 5 1 3 4 => 被影響
 
 或者，你想使用 `push` `shift` `pop` 去改變/取得資料，不如使用解構賦值 `...` ：
 
-```javascript=
+```jsx
 const arr = [1, 2, 3];
 
 const arr4 = [0, ...arr, 4]; // 取代 push 跟 unshift
@@ -77,7 +77,7 @@ const { [arr.length - 1]: last  } = arr; // 取代 pop
 
 把問題丟給別人，我們可以把 impure function ( 會造成 side effect ) 在別的地方做完之後再傳進 pure function 就好，簡單來講就是切的細一點：
 
-```javascript=
+```jsx
 function logSomething(something) {
     const dt = (new Date()).toISOString(); // new Date 每次產生的值不一樣
     console.log(`${dt}: ${something}`); // 會造成輸出 output 以外的影響
@@ -87,7 +87,7 @@ function logSomething(something) {
 
 如果我們希望保留 `console` 並採用依賴注入的話，會變成這樣：
 
-```javascript=
+```jsx
 
 function formatMessage(dt, something) {
     return `${dt}: ${something}`;
@@ -112,7 +112,7 @@ console.log(formatMessage(d, something));
 
 - **可快取 (Cache)** => 因為 same input same output ，所以在做類似動態規劃的問題時可以用 cache 大大減少記憶體空間，例：經典的費氏數列
 
-```javascript=
+```jsx
 function fibMemo (n, cache = []) {
  // 透過遞回不斷存入 callstack 的 function 都共用最上層定義的 cache 參數 => closure
   if (cache[n]) {
@@ -133,7 +133,7 @@ function fibMemo (n, cache = []) {
 
 - **可延遲運算 (Lazy Evaluation)** => 將會有 side effect 的 `fetch` function 用 [curry](https://hackmd.io/T2ODjTcrTJW9Z2xExurFsg) 的方式包裝起來，
 
-```javascript=
+```jsx
 const pureHttpCall = function(url) {
   return function(params) {
     return fetch(url, params);

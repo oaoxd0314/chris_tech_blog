@@ -16,19 +16,19 @@ layout: layouts/post.njk
 
 `Map` 可以透過 `new Map()` 建構出來:
 
-```javascript=
+```jsx
 let m = new Map()
 ```
 
 設定初始化資料：
 
-```javascript=
+```jsx
 const m = new Map([['b', 2],['c',3]])
 ```
 
 透過 `.set()` `.get()` `.has()` `.delete()`去存取、確認、刪除資料：
 
-```javascript=
+```jsx
 m.set('a',1) // m.set(key,val) , Map(1) { 'a' => 1}
 m.get('a') // m.get(key) ,1
 m.has('a') // m.has(key) ,true
@@ -37,19 +37,19 @@ m.delete('a') //m.delete(key) , true
 
 也可以透過 `.clear()` 去清空資料
 
-```javascript=
+```jsx
 m.clear() // undefined
 ```
 
 .size() 取得總數
 
-```javascript=
+```jsx
 m.size() // 0 => .clear() 全清掉了
 ```
 
 此外，他跟 `Obejct` 一樣可以透過 `.keys()` `.values()` 取得全部的 key,value。
 
-```javascript=
+```jsx
 const m = new Map([['b', 2],['c',3]])
 m.keys() // [Map Iterator] { 'b', 'c' }
 m.values() //[Map Iterator] { 2, 3 }
@@ -63,7 +63,7 @@ let mKeys = [...m.keys()] // 轉array [ 'b', 'c' ]
 
 1. `Map` 的 `keys` 可以是**任意值** ， `Object` 只能是 `string` 或 `symbols`:
 
-```javascript=
+```jsx
 const func = ()=>{}
 console.log(m.set(func,1))
 console.log(m.get(func)) // 1
@@ -76,7 +76,7 @@ const obj = {
 2. `Map` 的 keys 會根據被添加的時間而有順序性，`Object` 沒有
 3. `Map` 可直接迭代， `Object` 需用 `Object.keys()` 將 key 轉為 array 才能用
 
-```javascript=
+```jsx
 //map
 for (let k of m.keys()) {
   console.log(k)
@@ -91,7 +91,7 @@ for(let k in Object.keys(obj)){
 4. `Map` 的檢索效率高於 `Object`
 5. `Map` 繼承至 `Object`（幾乎所有實體都是，包含 `array`），所以 `Map` 可以使用所有 `Object` 的功能，但反之`Object` 則不行。
 
-```javascript=
+```jsx
 let m = new Map([[1,2],[3,4]]);
 console.log(map instanceof Object); //true
 let obj = new Object();
@@ -128,7 +128,7 @@ Input: nums = [2,7,11,15], target = 9
 Output: [0,1]
 Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
 
-```javascript=
+```jsx
 // BigO(n)
 const twoSum = function(nums, target) {
     
@@ -166,7 +166,7 @@ function 接收2個 array , arr1 和 arr2
 Input: arr1 = [28,6,22,8,44,17], arr2 = [22,28,8,6]
 Output: [22,28,8,6,17,44]
 
-```javascript=
+```jsx
 // BigO(2n)
 var relativeSortArray = function(arr1, arr2) {
     // 將 Map 依照 arr2 的順序建立

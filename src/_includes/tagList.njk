@@ -1,6 +1,8 @@
-{% for tag in collections.tagList %}
-  {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
-  <span id="post-tag">
-    <a href="{{ tagUrl | url }}">{{ tag }}</a>
-  </span>
-{% endfor %}
+<section class="flex-row flex-w flex-r-g-sm flex-c-g-sm">
+  {% for tag in collections.tagList %}
+    {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+    <span class="tag">
+      <a href="{{ tagUrl | url }}">{{ tag }}</a>
+    </span>
+  {% endfor %}
+</section>

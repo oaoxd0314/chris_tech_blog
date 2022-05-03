@@ -1,26 +1,26 @@
 {% for post in postslist | reverse %}
-  <div id="article" class="post-article">
-    <div class="p-t-sm">
-      <div class="fx-c">
-        <div class="d-b">
+  <div class="under-line">
+    <div class="pd-t-sm">
+      <div class="flex-col">
+        <div class="b">
             <time  datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time> | <span>2 min</span>
         </div>
 
-        <div class="fx-r m-t-sm">
+        <div class="flex-row mg-t-sm">
 
           <div class="fi">
-            <div id="title" class="p-b-xs">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</div>
+            <div id="title" class="pd-b-xs">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</div>
 
-            <div id="content">
+            <div class="content">
               {{post.data.description}}
             </div>
 
-            <div class="d-b p-tb-md">
+            <div class="b pd-tb-sm">
               <a href="{{ post.url | url }}">read more</a>
             </div>
           </div>
 
-          <div class="b m-l-md">
+          <div class="b mg-l-md">
             {# <div class="fake-img"></div> #}
             <img src="{{post.data.image}}" alt="{{post.data.imageAlt}}" class="post-img">
           </div>

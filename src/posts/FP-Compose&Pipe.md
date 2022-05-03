@@ -75,7 +75,7 @@ const compose = (g,f) => x => g(f(x));
 
 現在將上述的例子使用 compose 實作看看：
 
-```jsx=
+```jsx
 const data = {name:'FrankChou'}
 // 將要先執行的 function 放在右邊
 const uppercaseName = compose(uppercase,getName)
