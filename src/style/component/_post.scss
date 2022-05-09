@@ -23,8 +23,7 @@ article {
 
 .tag {
   padding: 4px 6px;
-  border-radius: 8px;
-  background-color: #3a3a3a;
+  @extend %bg-dark-mark-label !optional;
 }
 
 .under-line {
@@ -75,6 +74,21 @@ book-guide {
       font-size: 13px;
       font-weight: 500;
       color: #767676;
+    }
+  }
+}
+
+
+.pagination{
+  display: inline-block;
+  padding: 0;
+  margin: 8px 0;
+  list-style: none;
+  li{
+    display: inline;
+    a{
+      padding: 5px 8px;
+      @extend %bg-dark-mark-label !optional;
     }
   }
 }

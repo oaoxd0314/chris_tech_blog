@@ -1,8 +1,8 @@
 ---
 title: FP - 組合函數 Compose vs Pipe
 description: 接續上篇 curry，我們講解了如何將一個函式拆解成一個個可重複利用的 curry function。但連結過多的 function 將會讓可看性大幅度下低，就如同下面的例子：目前有一個會抓取物件名稱的 function...
-date: 2022-03-18
-scheduled: 2022-03-18
+date: 2022-04-24
+scheduled: 2022-04-24
 layout: layouts/post.njk
 tags: 
  - "Functional Programming"

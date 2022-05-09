@@ -3,8 +3,8 @@ title: FP - Pure Function & Side Effect
 tags: 
  - "Functional Programming"
 description: Pure function 意指相同的輸入，永遠會得到相同的輸出，而且沒有任何顯著的副作用 (side effect)。在 FP 的最小單位就是一個 function，舉凡像是 curry、compose、pipe 都是不斷重複 function 去達成需求。所以必須確保每一個最小單位，都是可以預測的（沒有任何副作用），這樣才能放心使用這些功能。
-date: 2022-03-12
-scheduled: 2022-03-12
+date: 2022-04-24
+scheduled: 2022-04-24
 image: https://i.imgur.com/4l6649U.png
 imageAlt: 'pure function'
 layout: layouts/post.njk

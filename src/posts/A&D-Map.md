@@ -4,7 +4,7 @@ tags:
  - A&D
  - data-structor
  - JavaScript
-description: 在 JavaScript 的演算法
+description: Map 是 JavaScript 在 ES6 推出的新物件，讓 JavaScript 工程師有合適的工具可以表達其他語言中 Map 的資料結構。
 date: 2022-03-12
 scheduled: 2022-03-12
 layout: layouts/post.njk
